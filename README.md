@@ -1,84 +1,93 @@
-# CEP_Project_2026
+# 🌊 JalDrishti (जलदृष्टी): Village-Level Groundwater Intelligence
 
-# 🌊 JalDrishti (जलदृष्टी)
-### *Advanced Village-Level Groundwater Analytics & Predictive Modeling*
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![C++](https://img.shields.io/badge/C++-17%2F20-blue.svg)](https://isocpp.org/)
+[![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://www.python.org/)
+[![Framework](https://img.shields.io/badge/Framework-React-61dafb.svg)](https://reactjs.org/)
+[![Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)]()
 
-![Project Header Animation](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJpZ3Z4bmZ6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZ力を/3o7TKMGpxx8G3S5X6U/giphy.gif) 
-*(Note: Replace with a custom GIF of your dashboard in action later)*
-
----
-
-## 📖 Project Vision
-**JalDrishti** is a mission-driven platform designed to solve the "Dry Borewell" crisis in rural India. By synthesizing 10 years of official data from **India-WRIS** and **CGWB**, we provide farmers with high-precision groundwater predictions. 
-
-Instead of guessing where to drill, farmers get a **probability-based success score**, saving them lakhs of rupees in failed infrastructure costs.
-
-
+### *Predicting Borewell Success and Preventing Financial Loss for Indian Farmers.*
 
 ---
 
-## 🛠️ Detailed System Architecture
-
-### 1. Data Ingestion Layer (The "Ingress")
-* **Source:** India-WRIS (Water Resources Information System).
-* **Scale:** 10 Years of historical time-series data.
-* **Format:** Automated scrapers converting PDF/Table data into structured **PostgreSQL** entries.
-
-### 2. The Prediction Engine (ML Logic)
-We utilize a **Time-Series Analysis** approach to predict future water levels.
-* **Algorithms:** LSTM (Long Short-Term Memory) or Random Forest Regressor.
-* **Features:** Historical rainfall, soil type, previous year's water table, and village-level extraction rates.
-* **Output:** Predicted water level in meters below ground level (mbgl).
-
-### 3. High-Performance Processing (C++ Core)
-For heavy mathematical computations and data sorting across millions of rows of historical village data, we use a C++ backend module to ensure near-instant results.
+## 📖 Table of Contents
+1. [Introduction](#-introduction)
+2. [The Problem Statement](#-the-problem-statement)
+3. [System Architecture](#-system-architecture)
+4. [Why C++ & Python?](#-why-c-and-python)
+5. [ML Model & Data](#-ml-model--data)
+6. [Key Features](#-key-features)
+7. [Getting Started](#-getting-started)
+8. [Roadmap](#-roadmap)
 
 ---
 
-## 🚀 Key Modules & Visuals
+## 📝 Introduction
+**JalDrishti** is an end-to-end data intelligence platform that localized national-level water data (India-WRIS) for the common farmer. By analyzing 10 years of historical groundwater fluctuations, our system predicts the feasibility of new borewells, helping farmers avoid the "dry-hole" trap that leads to massive debt.
 
-### 📍 Village-Level Mapping
-| Feature | Description |
-| :--- | :--- |
-| **Borewell Predictor** | Enter coordinates to see the success probability. |
-| **Historical Trends** | Animated graphs showing water depletion over the last decade. |
-| **Authority Dashboard** | Real-time map for Gov officials to track village health. |
-
----
-
-## 💻 Tech Stack & Tools
-
-![Tech Animation](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnd3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Znd3Znd3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZ力を/S60Cr90mNis8YVmgY8/giphy.gif)
-
-* **Frontend:** React.js + Tailwind CSS (for a mobile-first farmer UI).
-* **Backend:** Node.js (API) + C++ (Processing).
-* **Data Science:** Python (Pandas, Scikit-learn, Matplotlib).
-* **Database:** Supabase / PostgreSQL.
-* **DevOps:** Git/GitHub for version control.
+## ⚠️ The Problem Statement
+In India, drilling a borewell costs between ₹50,000 to ₹2,00,000. 
+* **The Gap:** Government data is available at the district/state level, but farmers live and work at the **Village level**.
+* **The Risk:** Without historical context, 1 in 3 borewells in water-stressed regions fail within a year.
+* **The Solution:** A predictive model that uses decadal data to give an "Authority Score" on water availability.
 
 ---
 
-## 📈 ML Pipeline Animation
-1. **Raw Data** (India-WRIS) ➔ 2. **Cleaning** (Null removal) ➔ 3. **Training** (10-Year History) ➔ 4. **Inference** (Farmer Query)
+## 🏗 System Architecture
+
+
+
+### 1. Ingress Layer (Data Collection)
+Automated scripts fetch official data from **India-WRIS** (Water Resources Information System) and **CGWB** (Central Ground Water Board).
+### 2. Core Processing (C++ Engine)
+A high-performance C++ module handles the mathematical crunching of millions of time-series data points to generate village-level averages.
+### 3. Intelligence Layer (Python ML)
+An LSTM (Long Short-Term Memory) neural network predicts future water table depth based on:
+* Historical rainfall patterns.
+* Crop cycles in the specific region.
+* Past 10-year groundwater trends.
+### 4. Presentation Layer (React.js)
+A simple, mobile-first dashboard translated into local languages for farmers and local authorities.
 
 ---
 
-## 🛠️ Development Setup
+## ⚙️ Why C++ and Python?
+We use a **Hybrid Engine** to ensure both speed and intelligence:
+
+* **C++ for Performance:** - Rapidly sorts and filters 10 years of raw government CSV/XML data.
+  - Handles "Computational Geometry" for mapping village coordinates.
+  - Near-zero latency for heavy backend calculations.
+  
+* **Python for Science:** - Leverages `Scikit-learn` and `TensorFlow` for complex groundwater forecasting.
+  - Rapid prototyping of data visualization plots (Matplotlib/Seaborn).
+
+---
+
+## 🧠 ML Model & Data
+We don't just show current data; we predict the future.
+* **Dataset:** 10 Years of official pre-monsoon and post-monsoon water levels.
+* **Model Type:** Random Forest Regressor / Time-Series Forecasting.
+* **Goal:** To predict the water table depth (in mbgl - meters below ground level) for the next 24 months.
+
+---
+
+## ✨ Key Features
+* **📍 Hyper-Local Search:** Enter your Village/Taluka to get an instant report.
+* **🔮 Borewell Predictor:** Visual "Meter" showing the probability of finding water.
+* **📊 Loss Prevention Calculator:** Estimates the risk of financial loss based on historical depletion rates.
+* **🏛️ Authority Portal:** Special login for Gram Panchayat officials to manage collective water usage.
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-* **C++ Compiler** (GCC/Clang)
-* **Python 3.10+**
-* **Node.js v18+**
+* **Compiler:** GCC (with C++17 support)
+* **Runtime:** Node.js (v18+) & Python (3.10+)
+* **Database:** PostgreSQL
 
-### Local Installation
-```bash
-# 1. Clone the repository
-git clone [https://github.com/shubham-dudhbhate/JalDrishti.git](https://github.com/shubham-dudhbhate/JalDrishti.git)
-
-# 2. Setup ML Environment
-cd ml-engine
-pip install -r requirements.txt
-
-# 3. Start the UI
-cd ../client
-npm install && npm start
+### Installation
+1. **Clone the project:**
+   ```bash
+   git clone [https://github.com/shubham-dudhbhate/JalDrishti.git](https://github.com/shubham-dudhbhate/JalDrishti.git)
+   cd JalDrishti
